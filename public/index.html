@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>دردشة الحفه 🎥</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>🎤 دردشة الحفه</h1>
+    <p class="subtitle">انضم إلى غرفة وابدأ الدردشة الصوتية والمرئية فورًا</p>
 
+    <div class="room-input">
+      <input type="text" id="roomInput" placeholder="اسم الغرفة (مثل: الساحة، الصالون)" />
+      <button onclick="joinRoom()">ادخل الحفه 🚀</button>
+    </div>
+
+    <div class="video-container">
+      <div class="video-box">
+        <label>أنت</label>
+        <video id="localVideo" autoplay muted controls></video>
+      </div>
+      <div class="video-box">
+        <label>الصديق</label>
+        <video id="remoteVideo" autoplay controls></video>
+      </div>
+    </div>
+
+    <div class="controls">
+      <button onclick="toggleCamera()">📸 إيقاف الكاميرا</button>
+      <button onclick="toggleAudio()">🎤 كتم الصوت</button>
+    </div>
+
+    <p class="status" id="status">جاهز للدردشة...</p>
+  </div>
+
+  <script src="/socket.io/socket.io.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
